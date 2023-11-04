@@ -19,10 +19,10 @@ def index():
             rx.vstack(
                 header(),
                 links(),
-                links(),
                 max_width=styles.MAX_WIDTH,
                 width=styles.FULL_WIDTH,
-                margin_y=styles.Size.LARGE.value
+                margin_y=styles.Size.LARGE.value,
+                padding=styles.Size.LARGE.value,
             ),
         ),
         footer()
@@ -31,7 +31,11 @@ def index():
 
 
 app = rx.App(
-    style=styles.BASE_STYLE
+    style=styles.BASE_STYLE,
+    stylesheets=[
+        "fonts/comfortaa/comfortaa.css",
+        "fonts/poppins/poppins.css"
+    ]
 )
 app.add_page(index)
 app.compile()
